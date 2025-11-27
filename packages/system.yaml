@@ -289,8 +289,11 @@ packages:
     alpine: virtualgl
 
   # CUSTOM SOFTWARE
-  - debian: firefox
+  - noble: firefox
+    jammy: firefox
+    debian: firefox-esr
+    kali: firefox-esr
+    sid: firefox-esr
     rhel: firefox
-    alpine: firefox-esr
 
   
