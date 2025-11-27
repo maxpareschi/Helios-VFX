@@ -1,7 +1,7 @@
 
 services:
   helios:
-    # image: junoinnovations/helios:noble
+    image: junoinnovations/helios:noble
     hostname: "helios"
     build:
       context: .
