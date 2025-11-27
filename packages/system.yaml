@@ -291,9 +291,9 @@ packages:
   # CUSTOM SOFTWARE
   - noble: firefox
     jammy: firefox
-    debian: firefox-esr
-    kali: firefox-esr
-    sid: firefox-esr
+    debian: firefox
+    kali: firefox
+    sid: firefox
     rhel: firefox
 
   

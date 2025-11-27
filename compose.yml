@@ -1,7 +1,7 @@
 
 services:
   helios:
-    image: junoinnovations/helios:unstable-jammy
+    # image: junoinnovations/helios:noble
     hostname: "helios"
     build:
       context: .
