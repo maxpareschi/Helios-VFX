@@ -4,16 +4,17 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 
-# cat >/etc/apt/preferences.d/firefox-no-snap <<EOL
-# Package: firefox*
-# Pin: release o=Ubuntu*
-# Pin-Priority: -1
-# EOL
+cat >/etc/apt/preferences.d/firefox-no-snap <<EOL
+Package: firefox*
+Pin: release o=Ubuntu*
+Pin-Priority: -1
+EOL
 
 sed -i '/locale/d' /etc/dpkg/dpkg.cfg.d/excludes
+add-apt-repository ppa:mozillateam/ppa -y
 apt update
 apt upgrade -y
-apt install -y gnupg curl wget
+apt install -y gnupg curl wget software-properties-common
 wget -q -O- https://packagecloud.io/dcommander/virtualgl/gpgkey |
 	gpg --dearmor >/etc/apt/trusted.gpg.d/VirtualGL.gpg
 echo "deb [signed-by=/etc/apt/trusted.gpg.d/VirtualGL.gpg] https://packagecloud.io/dcommander/virtualgl/any/ any main" >/etc/apt/sources.list.d/virtualgl.list
@@ -30,6 +31,8 @@ ln -sf /usr/share/icons/elementary-xfce-darker /usr/share/icons/elementary
 
 # backwards compat for neofetch
 ln -sf /bin/neofetch /bin/fastfetch
+
+apt remove -y xubuntu-wallpapers
 
 # handle background
 rm -rfv /usr/share/backgrounds/*
